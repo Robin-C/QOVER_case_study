@@ -1,0 +1,9 @@
+---
+dev:
+  dataset: dev_raw # dataset in gbq is same as schema
+  service_account: qover-392808-bb3723c9efe8.json
+  if_exists: replace
+prod:
+  dataset: prod_raw
+  service_account: some_json_file.json
+  if_exists: append
