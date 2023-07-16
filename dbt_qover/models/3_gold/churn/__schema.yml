@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: gold_contracts_status_by_month
+    description: ""
+    columns:
+      - name: year_month
+        description: ""
+
+      - name: has_churned_this_period
+        description: ""
+
+      - name: contract_id
+        description: ""
+
+      - name: policyholder_id
+        description: ""
+
+      - name: start_date
+        description: ""
+
+      - name: end_date
+        description: ""
+
+      - name: has_churned
+        description: ""
+
+      - name: cancel_reason
+        description: ""
+
+      - name: loaded_at
+        description: ""
+
+      - name: age
+        description: ""
+
+      - name: gender
+        description: ""
+
+      - name: full_name
+        description: ""
+
+      - name: address
+        description: ""
+
+      - name: language
+        description: ""

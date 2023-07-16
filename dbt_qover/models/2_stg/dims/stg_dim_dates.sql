@@ -18,6 +18,7 @@ SELECT
   , CAST(d AS timestamp)                                                         AS full_date_ts
   , FORMAT_DATE('%Y-%m', d)                                                      AS year_month
   , FORMAT_DATE('%Y-%b', d)                                                      AS year_month_name_short
+  , date_trunc(d, month) as first_day_of_month
   , DATE_TRUNC(d, MONTH) - 1                                                     AS last_day_prev_month
 FROM (
   SELECT *
