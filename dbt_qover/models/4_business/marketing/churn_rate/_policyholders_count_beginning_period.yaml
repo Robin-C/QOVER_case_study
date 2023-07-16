@@ -8,7 +8,7 @@ metrics:
       This metric is mostly used downstream to calculate the churn rate."
     label: Number of Policyholders at beginning of period
     calculation_method: count
-    expression: case when was_present_prev_period is false then 1 else null end
+    expression: case when was_present_prev_period is true then 1 else null end
 
     dimensions:
       - year_month
