@@ -13,7 +13,7 @@ with source as (
     , ph.language
   from source
   inner join {{ ref('stg_dim_policyholders') }} as ph on source.sk_id = ph.sk_id
-)
+),
 
 , final as (
   select *
