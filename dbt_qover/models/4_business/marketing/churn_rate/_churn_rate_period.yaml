@@ -12,4 +12,6 @@ metrics:
       - year_month
       - cancel_reason
       - language
+    
+    format: percent
       
