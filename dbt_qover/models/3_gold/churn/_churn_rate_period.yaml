@@ -6,7 +6,7 @@ metrics:
     description: "The churn rate by period"
 
     calculation_method: derived
-    expression: "{{metric('policyholders_lost_period')}} / {{metric('policyholders_count_beginning_period')}}"
+    expression: "{{metric('policyholders_lost_period')}} / {{metric('policyholders_count_beginning_period')}}" * 100
 
     dimensions:
       - year_month
