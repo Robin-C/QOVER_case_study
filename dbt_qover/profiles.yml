@@ -1,0 +1,14 @@
+dbt_qover:
+  outputs:
+    dev:
+      dataset: dbt
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: ../qover-392808-bb3723c9efe8.json
+      location: EU
+      method: service-account
+      priority: interactive
+      project: qover-392808
+      threads: 4
+      type: bigquery
+  target: dev
