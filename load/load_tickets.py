@@ -18,6 +18,9 @@ def load_tickets(filepath, settings):
     # load csv
     tickets_df = pd.read_csv(filepath, delimiter=sep)
 
+    # add ts
+    tickets_df['loaded_at'] = pd.Timestamp.now(tz='UTC')
+
     # send it to bq
     try:
         tickets_df.to_gbq(
