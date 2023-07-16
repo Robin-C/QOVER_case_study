@@ -1,7 +1,7 @@
 version: 2
 
 metrics:
-  - name: policyholders_count_beginning_period
+  - name: churned_policyholders_count_beginning_period
     model: ref('gold_contracts_status_by_month')
     description: |
       "This is the number of policyholders we had at the beginning of the period (ie the number we had at last day of prev month).
