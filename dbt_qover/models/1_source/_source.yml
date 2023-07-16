@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_core
+    database: qover-392808 # projectid
+    schema: dev_raw # dataset
+    tables:
+      - name: src_tickets
+      - name: src_contracts
+      - name: src_policyholders

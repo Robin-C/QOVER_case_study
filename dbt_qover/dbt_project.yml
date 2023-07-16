@@ -1,0 +1,43 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'dbt_qover'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'dbt_qover'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+models:
+  dbt_qover:
+    # Config indicated by + and applies to all files under models/example/
+    1_source:
+      dataset: "{{ 'dev_source' if target.name == 'dev' else 'prod_source' }}"
+    2_stg:
+      +materialized: table
+      dataset: "{{ 'dev_stg' if target.name == 'dev' else 'prod_stg' }}"
+    3_gold:
+      +materialized: table
+      dataset: "{{ 'dev_gold' if target.name == 'dev' else 'prod_gold' }}"
+    4_business:
+      +materialized: table
+      dataset: "{{ 'dev_business' if target.name == 'dev' else 'prod_business' }}"      
+
+snapshots:
+  +target_schema: "{{ 'dbt_ss_dev_source' if target.name == 'dev' else 'dbt_ss_dev_source' }}"
