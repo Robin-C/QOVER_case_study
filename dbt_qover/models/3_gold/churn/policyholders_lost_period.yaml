@@ -6,6 +6,7 @@ metrics:
     description: |
       "This is the number of policyholders we lost for each period.
       This metric is mostly used downstream to calculate the churn rate."
+    label: Number of Policyholders Lost
     calculation_method: count
     expression: contract_id
 

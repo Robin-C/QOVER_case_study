@@ -6,6 +6,7 @@ metrics:
     description: |
       "This is the number of policyholders we had at the beginning of the period (ie the number we had at last day of prev month).
       This metric is mostly used downstream to calculate the churn rate."
+    label: Number of Policyholders at beginning of period
     calculation_method: count_distinct
     expression: contract_id
 
