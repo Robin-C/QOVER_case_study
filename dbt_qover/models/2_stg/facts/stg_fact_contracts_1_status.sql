@@ -23,9 +23,22 @@ with source as (
   from source
 )
 
+, clean_cancel_reason as (
+  select
+    contract_id
+    , policyholder_id
+    , start_date
+    , end_date
+    , case when end_date is null then null else cancel_reason end as cancel_reason
+    , loaded_at
+    , has_churned
+  from add_contract_status
+
+)
+
 , final as (
   select *
-  from add_contract_status
+  from clean_cancel_reason
 )
 
 select *

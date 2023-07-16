@@ -11,37 +11,47 @@ with source as (
 , crossjoined as (
   select
     dates.year_month
+    , first_day_of_month
     , source.*
   from source
   cross join dates
   where
     source.start_date <= dates.full_date
     and coalesce(source.end_date, date_trunc(cast(current_timestamp() as date), month)) >= full_date
-  group by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+  group by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+)
+
+, add_prev_period_was_present as (
+    select *
+         , case when lag(year_month) over(partition by contract_id order by year_month) is null then false else true end as was_present_prev_period
+    from crossjoined
 )
 
 , add_has_churned_this_period as (
-    select *
-    , case when format_date('%Y-%m', end_date) = year_month then true else false end as has_churned_this_period  
-    from crossjoined
-),
+  select
+    *
+    , coalesce(format_date('%Y-%m', end_date) = year_month, false) as has_churned_this_period
+  from prev_period_was_present
+)
 
-reorder_cols as (
-    select year_month
-        , has_churned_this_period
-        , contract_id
-        , policyholder_id
-        , start_date
-        , end_date
-        , has_churned
-        , cancel_reason
-        , loaded_at
-        , age
-        , gender
-        , full_name
-        , address
-        , language
-    from add_has_churned_this_period
+, reorder_cols as (
+  select
+    year_month
+    , first_day_of_month
+    , has_churned_this_period
+    , contract_id
+    , policyholder_id
+    , start_date
+    , end_date
+    , has_churned
+    , cancel_reason
+    , loaded_at
+    , age
+    , gender
+    , full_name
+    , address
+    , language
+  from add_has_churned_this_period
 )
 
 , final as (
