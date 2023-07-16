@@ -13,4 +13,3 @@ metrics:
     dimensions:
       - year_month
       - cancel_reason
-      - language

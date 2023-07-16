@@ -12,9 +12,8 @@ metrics:
 
     dimensions:
       - year_month
-      - cancel_reason
-      - language
-    
+
+
     filters:
       - field: has_churned_this_period
         operator: 'is'
