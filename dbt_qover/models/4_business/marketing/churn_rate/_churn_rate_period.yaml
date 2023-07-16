@@ -12,3 +12,6 @@ metrics:
       - year_month
       - cancel_reason
       - language
+    
+    config:
+      treat_null_values_as_zero: true
