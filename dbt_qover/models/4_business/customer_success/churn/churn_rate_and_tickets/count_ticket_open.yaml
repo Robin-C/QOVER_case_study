@@ -1,0 +1,17 @@
+# When someone opens a ticket, what are the chances they will churn sooner or later?
+
+number of ticket open / number of churn
+
+version: 2
+
+metrics:
+  - name: count_ticket_open
+    model: ref('_gold_fact_tickets')
+    description: |
+      "This is the of tickets ever opened"
+    label: Number of tickets
+    calculation_method: count
+    expression: ticket_id
+
+    dimensions:
+      - type
