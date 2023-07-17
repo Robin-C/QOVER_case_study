@@ -1,0 +1,19 @@
+# When someone opens a ticket, what are the chances they will churn sooner or later?
+
+# When someone opens a ticket and churn, what are the main reasons?
+
+# Off those that churned, how many had open a ticket? How many had not?
+Total churn + ticket / total churned
+2 /
+
+# What's the churn rate per response delay?
+
+version: 2
+
+metrics:
+  - name: pct_ticket_opened_before_churning
+    label: Churn rate when ticket open
+    description: "For 100 policyholders that have churned, what's the number of them that have opened a ticket?"
+    calculation_method: derived
+    expression: "{{ metric('count_churn_ticket_open')}} / case when {{metric('policyholders_count_churn')}} = 0 then 1 else {{metric('policyholders_count_churn')}} end * 100"
+      

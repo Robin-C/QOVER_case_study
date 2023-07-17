@@ -1,7 +1,7 @@
 version: 2
 
 metrics:
-  - name: churn_rate
+  - name: pct_churn
     label: Churn Rate
     description: "The churn rate by period. The lower, the better."
 
