@@ -1,9 +1,11 @@
 models:
   - name: stg_fact_contracts_2_sk
-    description: ""
+    description: "This model is inserts the surrogate key from the policyholders dimension."
     columns:
       - name: contract_id
         description: ""
+        tests:
+          - unique        
 
       - name: sk_id
         description: ""
@@ -27,10 +29,12 @@ models:
         description: ""
 
   - name: stg_fact_tickets_ordered_1
-    description: ""
+    description: "This ticket cleans and adds some useful data related to tickets."
     columns:
       - name: ticket_id
         description: ""
+        tests:
+          - unique        
 
       - name: contract_id
         description: ""

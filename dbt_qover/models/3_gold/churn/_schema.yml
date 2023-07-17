@@ -1,9 +1,13 @@
 models:
   - name: _gold_contracts_enriched
-    description: ""
+        description: |
+      "This model is the final model for contracts (prepended by _). 
+      It is still very granular. There is no aggregation done at this stage."
     columns:
       - name: contract_id
         description: ""
+        tests:
+          - unique
 
       - name: sk_id
         description: ""
@@ -52,6 +56,8 @@ models:
 
       - name: total_duration_day
         description: ""
+        tests:
+          - is_duration_day_positive        
 
       - name: total_duration_day_bracket
         description: ""
@@ -61,6 +67,8 @@ models:
     columns:
       - name: ticket_id
         description: ""
+        tests:
+          - unique        
 
       - name: contract_id
         description: ""
@@ -70,6 +78,8 @@ models:
 
       - name: duration_day
         description: ""
+        tests:
+          - is_duration_day_positive        
 
       - name: duration_day_bracket
         description: ""
@@ -90,7 +100,14 @@ models:
         description: ""
 
   - name: gold_contracts_status_by_month
-    description: ""
+    description: |
+      "This model is key to calculate all metrics regarding churn rate. 
+      It takes in _gold_contracts_enriched and multiply each contract row by the number of month the contract lasts."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - contract_id
+            - year_month    
     columns:
       - name: year_month
         description: ""
@@ -118,6 +135,8 @@ models:
 
       - name: total_duration_day
         description: ""
+        tests:
+          - is_duration_day_positive        
 
       - name: total_duration_day_bracket
         description: ""
