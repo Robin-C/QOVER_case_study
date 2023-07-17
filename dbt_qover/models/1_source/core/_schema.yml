@@ -4,6 +4,8 @@ models:
     columns:
       - name: contract_id
         description: ""
+        tests:
+          - unique        
 
       - name: policyholder_id
         description: ""
@@ -25,6 +27,8 @@ models:
     columns:
       - name: ticket_id
         description: ""
+        tests:
+          - unique        
 
       - name: contract_id
         description: ""

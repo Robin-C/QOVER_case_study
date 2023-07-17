@@ -4,6 +4,8 @@ models:
     columns:
       - name: id
         description: ""
+        tests:
+          - unique        
 
       - name: full_date
         description: ""
@@ -85,6 +87,8 @@ models:
 
       - name: sk_id
         description: ""
+        tests:
+          - unique        
 
       - name: updated_at
         description: ""
