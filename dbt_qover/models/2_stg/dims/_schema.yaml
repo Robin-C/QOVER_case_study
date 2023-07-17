@@ -1,0 +1,96 @@
+models:
+  - name: stg_dim_dates
+    description: ""
+    columns:
+      - name: id
+        description: ""
+
+      - name: full_date
+        description: ""
+
+      - name: year
+        description: ""
+
+      - name: year_week
+        description: ""
+
+      - name: year_day
+        description: ""
+
+      - name: fiscal_year
+        description: ""
+
+      - name: fiscal_qtr
+        description: ""
+
+      - name: month
+        description: ""
+
+      - name: month_name
+        description: ""
+
+      - name: week_day
+        description: ""
+
+      - name: day_name
+        description: ""
+
+      - name: day_is_weekday
+        description: ""
+
+      - name: full_date_ts
+        description: ""
+
+      - name: year_month
+        description: ""
+
+      - name: year_month_name_short
+        description: ""
+
+      - name: first_day_of_month
+        description: ""
+
+      - name: last_day_prev_month
+        description: ""
+
+  - name: stg_dim_policyholders
+    description: ""
+    columns:
+      - name: policyholder_id
+        description: ""
+
+      - name: age
+        description: ""
+
+      - name: gender
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""
+
+      - name: full_name
+        description: ""
+
+      - name: address
+        description: ""
+
+      - name: language
+        description: ""
+
+      - name: loaded_at
+        description: ""
+
+      - name: sk_id
+        description: ""
+
+      - name: updated_at
+        description: ""
+
+      - name: valid_from
+        description: ""
+
+      - name: valid_to
+        description: ""

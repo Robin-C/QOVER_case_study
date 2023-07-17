@@ -1,22 +1,44 @@
-version: 2
-
 models:
-  - name: gold_contracts_status_by_month
+  - name: _gold_contracts_enriched
     description: ""
     columns:
-      - name: year_month
+      - name: contract_id
         description: ""
 
-      - name: contract_id
+      - name: sk_id
+        description: ""
+
+      - name: policyholder_id
+        description: ""
+
+      - name: start_date
+        description: ""
+
+      - name: end_date
+        description: ""
+
+      - name: has_churned
         description: ""
 
       - name: cancel_reason
         description: ""
 
-      - name: was_present_prev_period
+      - name: loaded_at
         description: ""
 
-      - name: has_churned_this_period
+      - name: age
+        description: ""
+
+      - name: gender
+        description: ""
+
+      - name: full_name
+        description: ""
+
+      - name: address
+        description: ""
+
+      - name: language
         description: ""
 
       - name: tickets_id
@@ -65,4 +87,37 @@ models:
         description: ""
 
       - name: language
+        description: ""
+
+  - name: gold_contracts_status_by_month
+    description: ""
+    columns:
+      - name: year_month
+        description: ""
+
+      - name: contract_id
+        description: ""
+
+      - name: cancel_reason
+        description: ""
+
+      - name: was_present_prev_period
+        description: ""
+
+      - name: has_churned_this_period
+        description: ""
+
+      - name: tickets_id
+        description: ""
+
+      - name: ticket_types
+        description: ""
+
+      - name: tickets_count
+        description: ""
+
+      - name: total_duration_day
+        description: ""
+
+      - name: total_duration_day_bracket
         description: ""
