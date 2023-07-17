@@ -45,3 +45,36 @@ models:
 
       - name: language
         description: ""
+
+  - name: _gold_fact_tickets
+    description: ""
+    columns:
+      - name: ticket_id
+        description: ""
+
+      - name: contract_id
+        description: ""
+
+      - name: ticket_number
+        description: ""
+
+      - name: duration_day
+        description: ""
+
+      - name: duration_day_bracket
+        description: ""
+
+      - name: type
+        description: ""
+
+      - name: has_churned
+        description: ""
+
+      - name: end_date
+        description: ""
+
+      - name: cancel_reason
+        description: ""
+
+      - name: language
+        description: ""
