@@ -4,7 +4,7 @@
     config(
       unique_key='policyholder_id',
       strategy='check',
-      check_cols=['contract_id', 'gender', 'first_name', 'last_name', 'address', 'language'],
+      check_cols=['gender', 'first_name', 'last_name', 'address', 'language'],
       post_hook=snapshot_backdate('{{ this }}')
     )
 }}
