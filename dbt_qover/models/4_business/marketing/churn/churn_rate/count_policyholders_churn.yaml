@@ -1,7 +1,7 @@
 version: 2
 
 metrics:
-  - name: policyholders_count_churn_period
+  - name: policyholders_count_churn
     model: ref('gold_contracts_status_by_month')
     description: |
       "This is the number of policyholders we lost for each period.
