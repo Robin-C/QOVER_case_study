@@ -45,6 +45,7 @@ exposures:
         
       - ref('_gold_contracts_enriched')
       - ref('gold_contracts_status_by_month')
+      - ref('_gold_fact_tickets')
  
       - metric('pct_churn_when_tickets')
       - metric('count_policyholders_churn_ticket_open')
