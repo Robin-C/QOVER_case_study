@@ -9,5 +9,3 @@ metrics:
     expression: "{{ metric('count_churn_ticket_open')}} / case when {{metric('count_policyholders_with_ticket_ever_opened')}} = 0 then 1 else {{metric('count_policyholders_with_ticket_ever_opened')}} end * 100"
     dimensions:
       - cancel_reason
-
-      
