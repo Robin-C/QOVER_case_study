@@ -40,6 +40,8 @@ models:
 
       - name: duration_day
         description: ""
+        tests:
+          - is_duration_day_positive
 
       - name: duration_day_bracket
         description: ""
