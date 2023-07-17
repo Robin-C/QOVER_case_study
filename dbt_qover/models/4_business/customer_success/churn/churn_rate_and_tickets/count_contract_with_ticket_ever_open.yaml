@@ -1,0 +1,18 @@
+version: 2
+
+metrics:
+  - name: count_contract_with_ticket_ever_open
+    model: ref('gold_contracts_status_by_month')
+    description: |
+      "This is the of contracts that have at least open 1 ticket"
+    label: Count contracts with a ticket ever opened
+    calculation_method: count
+    expression: tickets_id
+
+    dimensions:
+      - ticket_types
+    
+    filters:
+      - field: has_churned_this_period
+        operator: 'is'
+        value: 'true'
