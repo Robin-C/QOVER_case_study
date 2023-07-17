@@ -13,7 +13,7 @@ You can either copy and paste the content of the `startup.sh` script into a file
 `git clone git@github.com:Robin-C/QOVER_case_study.git && cd QOVER_case_study`
 
 ## 2. Create virtual environment, activate it and install python dependancies
-`pip install virtualenv && python virtualenv env && . env/bin/activate && pip install -r requirements.txt`
+`pip install virtualenv && virtualenv env && source env/bin/activate && pip install -r requirements.txt`
 
 ## 3. Load csv data into bigquery using python scripts
 `python load/load_contracts.py & python load/load_policyholders.py & python load/load_tickets.py`
@@ -21,7 +21,10 @@ You can either copy and paste the content of the `startup.sh` script into a file
 ## 4. Run dbt deps, snapshot, run and test
 `cd dbt_qover && dbt deps && dbt snapshot && dbt run && dbt test`
 
-All should be good!
+## 5. Generate and serve documentation
+`dbt docs generate && dbt docs serve`
+
+All should be good! dbt documentation is accessible at http://localhost:8080/#!/overview
 
 ## BI
 
