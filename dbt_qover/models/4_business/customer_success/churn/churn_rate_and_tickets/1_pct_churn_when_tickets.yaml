@@ -1,7 +1,7 @@
 version: 2
 
 metrics:
-  - name: churn_rate_when_tickets_open
+  - name: pct_churn_when_tickets
     label: Churn rate when ticket open
     description: "For 100 policy holders that have ever opened a ticket, how many of them have eventually churned. The lower the better."
 
