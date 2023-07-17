@@ -10,10 +10,6 @@ with source as (
     , contract_id
     , row_number() over (partition by contract_id order by ticket_id) as ticket_number
     , duration_day
-<<<<<<< HEAD
-=======
-    , {{ tickets_duration_brackets('duration_day', false) }} as duration_day_bracket
->>>>>>> 3e9ad29 (duration bracket macro)
     , type
   from source
 ),
