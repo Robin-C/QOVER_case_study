@@ -1,7 +1,7 @@
 version: 2
 
 metrics:
-  - name: count_churn_ticket_open
+  - name: count_policyholders_churn_ticket_open
     model: ref('gold_contracts_status_by_month')
     description: |
       "This is the number of contracts that have at least open 1 ticket AND have churned"

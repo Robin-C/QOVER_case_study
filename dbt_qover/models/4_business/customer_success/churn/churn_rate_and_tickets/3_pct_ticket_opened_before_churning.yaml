@@ -5,4 +5,4 @@ metrics:
     label: Ticket open churning rate
     description: "For 100 policyholders that have churned, what's the number of them that have opened a ticket?"
     calculation_method: derived
-    expression: "{{ metric('count_churn_ticket_open')}} / case when {{metric('policyholders_count_churn')}} = 0 then 1 else {{metric('policyholders_count_churn')}} end * 100"
+    expression: "{{ metric('count_policyholders_churn_ticket_open')}} / case when {{metric('policyholders_count_churn')}} = 0 then 1 else {{metric('policyholders_count_churn')}} end * 100"

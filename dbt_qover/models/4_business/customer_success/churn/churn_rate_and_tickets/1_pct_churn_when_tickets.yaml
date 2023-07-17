@@ -3,9 +3,9 @@ version: 2
 metrics:
   - name: pct_churn_when_tickets
     label: Churn rate when ticket open
-    description: "For 100 policy holders that have ever opened a ticket, how many of them have eventually churned. The lower the better."
+    description: "For 100 policyholders that have ever opened a ticket, how many of them have eventually churned. The lower the better."
 
     calculation_method: derived
-    expression: "{{ metric('count_churn_ticket_open')}} / case when {{metric('count_policyholders_with_ticket_ever_opened')}} = 0 then 1 else {{metric('count_policyholders_with_ticket_ever_opened')}} end * 100"
+    expression: "{{ metric('count_policyholders_churn_ticket_open')}} / case when {{metric('count_policyholders_with_ticket_ever_opened')}} = 0 then 1 else {{metric('count_policyholders_with_ticket_ever_opened')}} end * 100"
     dimensions:
       - cancel_reason
