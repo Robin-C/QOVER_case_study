@@ -1,0 +1,10 @@
+version: 2
+
+metrics:
+  - name: pct_ticket_opened_before_churning
+    label: Ticket open churning rate
+    description: "For 100 policyholders that have churned, what's the number of them that have opened a ticket?"
+    calculation_method: derived
+    expression: "{{ metric('count_policyholders_with_ticket_ever_opened')}} / case when {{metric('count_churn_ticket_open')}} = 0 then 1 else {{metric('count_churn_ticket_open')}} end * 100"
+    dimensions:
+      - total_duration_day_bracket
