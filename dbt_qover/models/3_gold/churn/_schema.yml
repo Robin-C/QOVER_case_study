@@ -7,43 +7,31 @@ models:
       - name: year_month
         description: ""
 
-      - name: has_churned_this_period
-        description: ""
-
       - name: contract_id
-        description: ""
-
-      - name: policyholder_id
-        description: ""
-
-      - name: start_date
-        description: ""
-
-      - name: end_date
-        description: ""
-
-      - name: has_churned
         description: ""
 
       - name: cancel_reason
         description: ""
 
-      - name: loaded_at
+      - name: was_present_prev_period
         description: ""
 
-      - name: age
+      - name: has_churned_this_period
         description: ""
 
-      - name: gender
+      - name: tickets_id
         description: ""
 
-      - name: full_name
+      - name: ticket_types
         description: ""
 
-      - name: address
+      - name: tickets_count
         description: ""
 
-      - name: language
+      - name: total_duration_day
+        description: ""
+
+      - name: total_duration_day_bracket
         description: ""
 
   - name: _gold_fact_tickets
