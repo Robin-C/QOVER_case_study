@@ -1,0 +1,57 @@
+version: 2
+
+exposures:
+
+  - name: marketing
+    label: Marketing models
+    type: dashboard
+
+    depends_on:
+      - source('raw_core', 'src_contracts')
+      - source('raw_core', 'src_tickets')
+      - source('raw_core', 'src_policyholders')
+      - ref('src_core_policyholders') # snapshot  
+
+      - ref('stg_dim_dates')
+      - ref('stg_dim_policyholders')
+      - ref('stg_fact_contracts_2_sk')
+      - ref('stg_fact_tickets_ordered_1')  
+        
+      - ref('_gold_contracts_enriched')
+      - ref('gold_contracts_status_by_month')
+ 
+      - metric('pct_churn')
+      - metric('policyholders_count_beginning_period')
+      - metric('policyholders_count_churn')
+
+    owner:
+      name: Boaty McBoatFace
+      email: Boaty@McBoatFace.com
+
+  - name: customer_success
+    label: CS models
+    type: dashboard
+
+    depends_on:
+      - source('raw_core', 'src_contracts')
+      - source('raw_core', 'src_tickets')
+      - source('raw_core', 'src_policyholders')
+      - ref('src_core_policyholders') # snapshot  
+
+      - ref('stg_dim_dates')
+      - ref('stg_dim_policyholders')
+      - ref('stg_fact_contracts_2_sk')
+      - ref('stg_fact_tickets_ordered_1')  
+        
+      - ref('_gold_contracts_enriched')
+      - ref('gold_contracts_status_by_month')
+      - ref('_gold_fact_tickets')
+ 
+      - metric('pct_churn_when_tickets')
+      - metric('count_policyholders_churn_ticket_open')
+      - metric('pct_ticket_opened_before_churning')
+      - metric('count_policyholders_with_ticket_ever_opened')
+
+    owner:
+      name: Boaty McBoatFace
+      email: Boaty@McBoatFace.com
