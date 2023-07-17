@@ -1,0 +1,21 @@
+version: 2
+
+metrics:
+  - name: count_policyholders_churn_ticket_open
+    model: ref('gold_contracts_status_by_month')
+    description: |
+      "This is the number of contracts that have at least open 1 ticket AND have churned"
+    label: Count churned contracts with a ticket ever opened
+    calculation_method: count_distinct
+    expression: contract_id
+
+    dimensions:
+      - cancel_reason
+
+    filters:
+      - field: has_churned_this_period
+        operator: 'is'
+        value: 'true'
+      - field: tickets_id
+        operator: 'is not'
+        value: 'null'

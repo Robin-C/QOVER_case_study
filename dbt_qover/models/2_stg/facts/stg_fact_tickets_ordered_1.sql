@@ -10,21 +10,38 @@ with source as (
     , contract_id
     , row_number() over (partition by contract_id order by ticket_id) as ticket_number
     , duration_day
-    , case
-        when duration_day >= 0 and duration_day < 10 then '[0,10['
-        when duration_day >= 10 and duration_day < 20 then '[10,20['
-        when duration_day >= 20 and duration_day < 30 then '[20,30['
-        when duration_day >= 30 and duration_day < 40 then '[30,40['
-        when duration_day >= 40 and duration_day < 50 then '[40,50['
-        else '>50'
-      end as duration_day_bracket
     , type
   from source
+),
+
+clean_duration as (
+  select ticket_id
+  , contract_id
+  , ticket_number
+  , case when duration_day < 0 then 0 else duration_day end as duration_day
+  , type
+  from add_step_number
+),
+
+add_duration_bracket as (
+  select *
+      , {{ tickets_duration_brackets('duration_day', false) }} as duration_day_bracket
+  from clean_duration
+),
+
+cleaning_type as (
+  select ticket_id
+  , contract_id
+  , ticket_number
+  , duration_day
+  , duration_day_bracket
+  , case when type = 'claims' then 'claim' else type end as type
+  from add_duration_bracket
 )
 
 , final as (
   select *
-  from add_step_number
+  from cleaning_type
 )
 
 select *

@@ -42,6 +42,8 @@ with source as (
   select year_month
      ,   contract_id
      , cancel_reason
+     , was_present_prev_period
+     , has_churned_this_period
   from add_has_churned_this_period
 )
 

@@ -1,12 +1,12 @@
 version: 2
 
 metrics:
-  - name: policyholders_churn_period
+  - name: policyholders_count_churn
     model: ref('gold_contracts_status_by_month')
     description: |
       "This is the number of policyholders we lost for each period.
       This metric is mostly used downstream to calculate the churn rate."
-    label: Number of Policyholders Lost
+    label: Count of Policyholders Lost
     calculation_method: count
     expression: contract_id
 
