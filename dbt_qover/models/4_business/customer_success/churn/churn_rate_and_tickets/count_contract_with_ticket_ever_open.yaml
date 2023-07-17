@@ -10,4 +10,5 @@ metrics:
     expression: tickets_id
 
     dimensions:
-      - ticket_types
+      - year_month
+      - cancel_reason

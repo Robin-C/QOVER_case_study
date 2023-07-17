@@ -1,9 +1,12 @@
 version: 2
 
 metrics:
-  - name: churn_pct_when_tickets_open
+  - name: churn_rate_when_tickets_open
     label: Churn rate when ticket open
     description: "For 100 policyholder that churned, how many has ever had a ticket open"
 
     calculation_method: derived
     expression: "{{ metric('count_contract_with_ticket_ever_open')}} / case when {{metric('policyholders_count_churn_period')}} = 0 then 1 else {{metric('policyholders_count_churn_period')}} end * 100"
+    dimensions:
+      - year_month
+      - cancel_reason
