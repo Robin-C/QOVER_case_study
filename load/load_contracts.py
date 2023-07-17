@@ -1,6 +1,4 @@
 import os
-import yaml
-from google.oauth2 import service_account
 import pandas as pd
 
 from bq_settings import get_settings
@@ -19,7 +17,7 @@ def load_contracts(filepath, settings):
     tickets_df = pd.read_csv(filepath, delimiter=sep)
 
     # add ts
-    tickets_df['loaded_at'] = pd.Timestamp.now(tz='UTC')
+    tickets_df["loaded_at"] = pd.Timestamp.now(tz="UTC")
 
     # send it to bq
     try:
@@ -33,6 +31,7 @@ def load_contracts(filepath, settings):
         raise Exception("Error loading contracts.csv")
 
     return True
+
 
 if __name__ == "__main__":
     settings = get_settings()

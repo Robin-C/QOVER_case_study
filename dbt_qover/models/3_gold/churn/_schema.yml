@@ -1,6 +1,6 @@
 models:
   - name: _gold_contracts_enriched
-        description: |
+    description: |
       "This model is the final model for contracts (prepended by _). 
       It is still very granular. There is no aggregation done at this stage."
     columns:

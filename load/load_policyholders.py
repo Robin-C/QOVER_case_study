@@ -1,6 +1,4 @@
 import os
-import yaml
-from google.oauth2 import service_account
 import pandas as pd
 
 from bq_settings import get_settings
@@ -19,7 +17,7 @@ def load_policyholders(filepath, settings):
     tickets_df = pd.read_csv(filepath, delimiter=sep)
 
     # add ts
-    tickets_df['loaded_at'] = pd.Timestamp.now(tz='UTC')
+    tickets_df["loaded_at"] = pd.Timestamp.now(tz="UTC")
 
     # send it to bq
     try:
@@ -31,7 +29,7 @@ def load_policyholders(filepath, settings):
         )
     except:
         raise Exception("Error loading policyholders.csv")
-    
+
     return True
 
 
