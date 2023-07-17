@@ -18,5 +18,4 @@ metrics:
         value: 'true'
       - field: tickets_id
         operator: 'is not'
-        value: 'null'        
-      
+        value: 'null'
