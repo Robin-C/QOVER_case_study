@@ -2,7 +2,7 @@ version: 2
 
 metrics:
   - name: count_ticket_open
-    model: ref('_gold_fact_tickets')
+    model: ref('gold_contracts_status_by_month')
     description: |
       "This is the of tickets ever opened"
     label: Number of tickets
