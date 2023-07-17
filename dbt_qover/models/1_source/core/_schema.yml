@@ -1,0 +1,39 @@
+models:
+  - name: src_core_contracts
+    description: ""
+    columns:
+      - name: contract_id
+        description: ""
+
+      - name: policyholder_id
+        description: ""
+
+      - name: start_date
+        description: ""
+
+      - name: end_date
+        description: ""
+
+      - name: cancel_reason
+        description: ""
+
+      - name: loaded_at
+        description: ""
+
+  - name: src_core_tickets
+    description: ""
+    columns:
+      - name: ticket_id
+        description: ""
+
+      - name: contract_id
+        description: ""
+
+      - name: duration_day
+        description: ""
+
+      - name: type
+        description: ""
+
+      - name: loaded_at
+        description: ""

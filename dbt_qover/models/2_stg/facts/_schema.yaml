@@ -1,0 +1,48 @@
+models:
+  - name: stg_fact_contracts_2_sk
+    description: ""
+    columns:
+      - name: contract_id
+        description: ""
+
+      - name: sk_id
+        description: ""
+
+      - name: policyholder_id
+        description: ""
+
+      - name: start_date
+        description: ""
+
+      - name: end_date
+        description: ""
+
+      - name: has_churned
+        description: ""
+
+      - name: cancel_reason
+        description: ""
+
+      - name: loaded_at
+        description: ""
+
+  - name: stg_fact_tickets_ordered_1
+    description: ""
+    columns:
+      - name: ticket_id
+        description: ""
+
+      - name: contract_id
+        description: ""
+
+      - name: ticket_number
+        description: ""
+
+      - name: duration_day
+        description: ""
+
+      - name: duration_day_bracket
+        description: ""
+
+      - name: type
+        description: ""
