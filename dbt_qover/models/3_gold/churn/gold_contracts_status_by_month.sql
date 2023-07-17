@@ -14,12 +14,17 @@ with source as (
     , contract_id
     , source.cancel_reason
     , end_date
+    , tickets_id
+    , ticket_types
+    , tickets_count
+    , total_duration_day
+    , total_duration_day_bracket
   from source
   cross join dates
   where
     source.start_date <= dates.full_date
     and coalesce(source.end_date, date_trunc(cast(current_timestamp() as date), month)) >= full_date
-  group by 1, 2, 3, 4
+  group by 1, 2, 3, 4,5,6,7,8,9
 )
 
 , add_prev_period_was_present as (
@@ -44,6 +49,11 @@ with source as (
      , cancel_reason
      , was_present_prev_period
      , has_churned_this_period
+      , tickets_id
+      , ticket_types
+      , tickets_count
+      , total_duration_day
+      , total_duration_day_bracket     
   from add_has_churned_this_period
 )
 
