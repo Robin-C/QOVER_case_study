@@ -4,7 +4,7 @@ metrics:
   - name: count_contract_with_ticket_ever_open
     model: ref('gold_contracts_status_by_month')
     description: |
-      "This is the of contracts that have at least open 1 ticket regardless of if they have churned or not"
+      "This is the number of contracts that have at least open 1 ticket regardless of if they have churned or not"
     label: Count contracts with a ticket ever opened
     calculation_method: count_distinct
     expression: tickets_id
