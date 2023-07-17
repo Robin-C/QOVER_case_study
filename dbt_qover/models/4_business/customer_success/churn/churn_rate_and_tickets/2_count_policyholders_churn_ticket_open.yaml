@@ -16,3 +16,7 @@ metrics:
       - field: has_churned_this_period
         operator: 'is'
         value: 'true'
+      - field: tickets_id
+        operator: 'is not'
+        value: 'null'        
+      

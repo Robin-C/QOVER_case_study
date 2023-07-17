@@ -13,11 +13,21 @@ with source as (
     , {{ tickets_duration_brackets('duration_day', false) }} as duration_day_bracket
     , type
   from source
+),
+
+cleaning_type as (
+  select ticket_id
+  , contract_id
+  , ticket_number
+  , duration_day
+  , duration_day_bracket
+  , case when type = 'claims' then 'claim' else type end as type
+  from add_step_number
 )
 
 , final as (
   select *
-  from add_step_number
+  from cleaning_type
 )
 
 select *
