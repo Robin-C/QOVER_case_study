@@ -1,7 +1,3 @@
-# When someone opens a ticket, what are the chances they will churn sooner or later?
-
-number of ticket open / number of churn
-
 version: 2
 
 metrics:
