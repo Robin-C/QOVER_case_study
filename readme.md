@@ -24,7 +24,7 @@ You can either copy and paste the content of the `startup.sh` script into a file
 ## 5. Generate and serve documentation
 `dbt docs generate && dbt docs serve`
 
-![dbt lineage][https://i.imgur.com/tM6iYUF.png]
+![dbt lineage](https://i.imgur.com/tM6iYUF.png)
 
 All should be good! dbt documentation is accessible at http://localhost:8080/#!/overview
 
