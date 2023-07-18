@@ -9,6 +9,12 @@ Before getting started, you will need:
 
 You can either copy and paste the content of the `startup.sh` script into a file named `startup.sh` and run `source startup.sh` **OR** you can follow step by step below.
 
+If you just want to see the insights, you can visit the [lightdash dashboard](https://app.lightdash.cloud/projects/6fe464fe-bf62-4699-a116-5b8476651ee6/dashboards/f660d13a-cc69-4ce1-8daf-453dfbbcad07/view) using the following credentials.
+
+login: qover_lightdash@proton.me
+
+password: 123
+
 ## 1. Clone repo and cd into it
 `git clone git@github.com:Robin-C/QOVER_case_study.git && cd QOVER_case_study`
 
@@ -28,10 +34,3 @@ You can either copy and paste the content of the `startup.sh` script into a file
 
 All should be good! dbt documentation is accessible at http://localhost:8080/#!/overview
 
-## BI
-
-You can visit the [lightdash dashboard](https://app.lightdash.cloud/projects/6fe464fe-bf62-4699-a116-5b8476651ee6/dashboards/f660d13a-cc69-4ce1-8daf-453dfbbcad07/view) for insights using the following credentials.
-
-login: qover_lightdash@proton.me
-
-password: 123
