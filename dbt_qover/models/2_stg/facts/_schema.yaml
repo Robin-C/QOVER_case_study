@@ -29,7 +29,7 @@ models:
         description: ""
 
   - name: stg_fact_tickets_ordered_1
-    description: "This ticket cleans and adds some useful data related to tickets."
+    description: "This model adds some useful data related to tickets notably it gives a sense of history by ranking tickets for each contract."
     columns:
       - name: ticket_id
         description: ""

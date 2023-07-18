@@ -29,9 +29,9 @@ Each sub folder represents a source. There might be several models per sub folde
 The following transformations may be done at this stage:
 - data type casting
 - column renaming (x_id for id columns, timestamp_at for timestamp columns)
+- basic data cleaning (`case when` to clean up typos...)
 
 The following transformations should **NOT** be done here:
-- data cleaning
 - any kind of join
 - any business logic
 
@@ -39,7 +39,7 @@ Models naming follow the following logic `src_source-name_what-is-it`. Eg. for c
 
 ### 2_stg
 
-This folder is split into 2 sub folders.
+This folder is split into 2 sub folders. One common thing they have is this is where the capture data change is setup (incremental modelization etc..).
 
 - dims
 

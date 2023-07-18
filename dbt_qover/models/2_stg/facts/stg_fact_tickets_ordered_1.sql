@@ -27,16 +27,6 @@ add_duration_bracket as (
   select *
       , {{ tickets_duration_brackets('duration_day', false) }} as duration_day_bracket
   from clean_duration
-),
-
-cleaning_type as (
-  select ticket_id
-  , contract_id
-  , ticket_number
-  , duration_day
-  , duration_day_bracket
-  , case when type = 'claims' then 'claim' else type end as type
-  from add_duration_bracket
 )
 
 , final as (
