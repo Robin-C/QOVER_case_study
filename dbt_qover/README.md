@@ -47,15 +47,15 @@ This is where we'll find dimensions. See [Kimball's methodology](https://www.edu
 
 Models naming follow this logic `stg_dim_what-is-it`.
 
-This is the stage where we perform cleaning, some basic data enrichment. We usually avoid joining here. Data is still very granular.
-
-You can use several models if you think that makes sense. If you do, make sure to prepend with the step number. For example, `stg_dim_risk_carriers_1.sql` and `stg_dim_risk_carriers_2.sql` where `stg_dim_risk_carriers_2.sql` is downstream from `stg_dim_risk_carriers_1.sql`.
-
-You can also use ephemeral models as to not clutter the database.
+This is the stage where we perform cleaning, some basic data enrichment. We usually join here to enrich the dimension. For example, a policyholder might have revelant information coming from several sources: core but also our CRM etc... Data is still very granular.
 
 - facts
 
 This is where we'll find fact tables. Refer to Kimball if this notion is not clear for you.
+
+You can use several models if you think that makes sense. If you do, make sure to prepend with the step number. For example, `stg_dim_risk_carriers_1.sql` and `stg_dim_risk_carriers_2.sql` where `stg_dim_risk_carriers_2.sql` is downstream from `stg_dim_risk_carriers_1.sql`.
+
+You can also use ephemeral models as to not clutter the database.
 
 This is where we will add simple business logic such as `case when` as well as insert scd surrogate keys when appropriate.
 
