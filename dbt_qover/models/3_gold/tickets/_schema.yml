@@ -1,37 +1,37 @@
 models:
     - name: _gold_fact_tickets
-    description: "This model has data for every ticket. It is also enriched with data from contracts such as churn status."
-    columns:
-      - name: ticket_id
-        description: ""
-        tests:
-          - unique        
+      description: This model has data for every ticket. It is also enriched with data from contracts such as churn status.
+      columns:
+        - name: ticket_id
+          description: ""
+          tests:
+            - unique        
 
-      - name: contract_id
-        description: ""
+        - name: contract_id
+          description: ""
 
-      - name: ticket_number
-        description: ""
+        - name: ticket_number
+          description: ""
 
-      - name: duration_day
-        description: ""
-        tests:
-          - is_duration_day_positive        
+        - name: duration_day
+          description: ""
+          tests:
+            - is_duration_day_positive        
 
-      - name: duration_day_bracket
-        description: ""
+        - name: duration_day_bracket
+          description: ""
 
-      - name: type
-        description: ""
+        - name: type
+          description: ""
 
-      - name: has_churned
-        description: ""
+        - name: has_churned
+          description: ""
 
-      - name: end_date
-        description: ""
+        - name: end_date
+          description: ""
 
-      - name: cancel_reason
-        description: ""
+        - name: cancel_reason
+          description: ""
 
-      - name: language
-        description: ""
+        - name: language
+          description: ""

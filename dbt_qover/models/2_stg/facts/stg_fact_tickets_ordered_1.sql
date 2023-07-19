@@ -31,7 +31,7 @@ add_duration_bracket as (
 
 , final as (
   select *
-  from cleaning_type
+  from add_duration_bracket
 )
 
 select *

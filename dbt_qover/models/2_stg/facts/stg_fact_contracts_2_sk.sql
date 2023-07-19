@@ -25,7 +25,7 @@ with source as (
   where
     1 = 1
     and cast(start_date as timestamp) >= policyholders.valid_from
-    and coalesce(cast(end_date as timestamp), cast('2099-12-31' as timestamp)) <= policyholders.valid_to
+    and coalesce(cast(start_date as timestamp), cast('2099-12-31' as timestamp)) <= policyholders.valid_to
 )
 
 , final as (
