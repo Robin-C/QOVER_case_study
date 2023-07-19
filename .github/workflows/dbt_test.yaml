@@ -1,0 +1,16 @@
+name: dbt test
+
+on: push
+
+jobs:
+  run-dbt-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v3"
+      - uses: "actions/setup-python@v3"
+        with:
+            python-version: "3.8"
+      - name: Install dbt core
+        run: "pip install dbt-core dbt-bigquery"
+      - name: run dbt test
+        run: "cd $GITHUB_WORKSPACE/dbt_qover && dbt deps && dbt test"

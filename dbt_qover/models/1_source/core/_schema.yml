@@ -5,7 +5,7 @@ models:
       - name: contract_id
         description: ""
         tests:
-          - unique        
+          - unique
 
       - name: policyholder_id
         description: ""
@@ -28,7 +28,7 @@ models:
       - name: ticket_id
         description: ""
         tests:
-          - unique        
+          - unique
 
       - name: contract_id
         description: ""
